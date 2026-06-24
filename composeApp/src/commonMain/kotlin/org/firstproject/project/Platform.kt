@@ -1,0 +1,7 @@
+package org.firstproject.project
+
+interface Platform {
+    val name: String
+}
+
+expect fun getPlatform(): Platform

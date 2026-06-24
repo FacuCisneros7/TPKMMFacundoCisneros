@@ -1,0 +1,16 @@
+CREATE TABLE PokemonEntity (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    imageUrl TEXT NOT NULL
+);
+
+getAllPokemons:
+SELECT * FROM PokemonEntity;
+
+insertPokemon:
+INSERT OR REPLACE INTO PokemonEntity(id, name, description, imageUrl)
+VALUES (?, ?, ?, ?);
+
+deleteAllPokemons:
+DELETE FROM PokemonEntity;
