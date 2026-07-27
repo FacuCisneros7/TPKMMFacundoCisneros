@@ -1,8 +1,6 @@
 package org.firstproject.project.UI.Screens
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -16,8 +14,7 @@ import org.firstproject.project.Data.Local.PokemonLocalDataSource
 import org.firstproject.project.Data.Remote.PokemonApiClient
 import org.firstproject.project.Data.Repository.PokemonRepositoryImpl
 import org.firstproject.project.Domain.GetPokemonsUseCase
-import org.firstproject.project.Domain.Pokemon
-import org.firstproject.project.UI.Componentes.PokemonItem
+import org.firstproject.project.UI.Componentes.PokemonList
 import org.firstproject.project.UI.ScreenState
 import org.firstproject.project.UI.ViewModel.PokemonViewModel
 
@@ -54,16 +51,4 @@ fun PokemonScreen(localDataSource: PokemonLocalDataSource) {
 
 }
 
-@Composable
-fun PokemonList(pokemons: List<Pokemon>) {
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.spacedBy(12.dp),
-        contentPadding = PaddingValues(16.dp)
-    ) {
-        items(pokemons) { pokemon ->
-            PokemonItem(pokemon)
-        }
-    }
-}
 
